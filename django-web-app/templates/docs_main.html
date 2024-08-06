@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static "css/docs_main.css" %}">
+
+{% endblock head %}
+
+{% block title %}Doc{% endblock title %}
+
+{% block content %}
+{% include 'messages.html' %}
+
+<section>
+  <div class="documentation">
+    <h1>Project Documentation</h1>
+
+    <nav class="doc-nav">
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#usage">Usage</a></li>
+            <li><a href="#api-reference">API Reference</a></li>
+        </ul>
+    </nav>
+
+    <section id="introduction">
+        <h2>Introduction</h2>
+        <p>Welcome to the documentation for [Your Project Name]. This project is designed to [brief description of your project's purpose].</p>
+    </section>
+
+    <section id="installation">
+        <h2>Installation</h2>
+        <p>To install [Your Project Name], follow these steps:</p>
+        <ol>
+            <li>Clone the repository: <code>git clone [your-repo-url]</code></li>
+            <li>Navigate to the project directory: <code>cd [your-project-name]</code></li>
+            <li>Install required dependencies: <code>pip install -r requirements.txt</code></li>
+            <li>Run migrations: <code>python manage.py migrate</code></li>
+            <li>Start the development server: <code>python manage.py runserver</code></li>
+        </ol>
+    </section>
+
+    <section id="usage">
+        <h2>Usage</h2>
+        <p>Here's how to use the main features of [Your Project Name]:</p>
+        <h3>Feature 1</h3>
+        <p>[Description of how to use feature 1]</p>
+        <h3>Feature 2</h3>
+        <p>[Description of how to use feature 2]</p>
+        <!-- Add more features as needed -->
+    </section>
+
+    <section id="api-reference">
+        <h2>API Reference</h2>
+        <h3>Endpoint 1</h3>
+        <p><strong>URL:</strong> <code>/api/endpoint1</code></p>
+        <p><strong>Method:</strong> GET</p>
+        <p><strong>Description:</strong> [What this endpoint does]</p>
+        <h4>Parameters:</h4>
+        <ul>
+            <li><code>param1</code>: [Description of param1]</li>
+            <li><code>param2</code>: [Description of param2]</li>
+        </ul>
+        <h4>Response:</h4>
+        <pre><code>
+{
+    "key1": "value1",
+    "key2": "value2"
+}
+        </code></pre>
+        
+        <!-- Add more endpoints as needed -->
+    </section>
+</div>
+</section>
+
+
+{% endblock content %}
+
+{% block script %}
+<script src="{% static "js/docs_main.js"%}"></script>
+<script src="{% static 'js/messages.js' %}"></script>
+
+{% endblock script %}
